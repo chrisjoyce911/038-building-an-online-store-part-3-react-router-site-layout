@@ -1,25 +1,5 @@
-import React, { useState, useEffect } from "react"
-
-const items = [
-  {
-    sku: "sku_G3G6Y94PnHPuxR",
-    quantity: 1,
-    price: 220000,
-    name: "Sony a7 III Full-frame Mirrorless Camera"
-  },
-  {
-    sku: "sku_G3G5MorYlndH53",
-    quantity: 1,
-    price: 34000,
-    name: "Canon EOS Rebel T6 Digital SLR Camera"
-  },
-  {
-    sku: "sku_G3G3ezLA8VaR1P",
-    quantity: 1,
-    price: 120000,
-    name: "Nikon D750 FX-format Digital SLR Camera"
-  }
-]
+import React, { useState, useEffect, useContext } from "react"
+import { CartContext } from "./context"
 
 function formatPrice(price) {
   return `$${(price * 0.01).toFixed(2)}`
@@ -31,6 +11,7 @@ function totalPrice(items) {
 
 export default function Cart({ stripeToken }) {
   const [stripe, setStripe] = useState(null)
+  const ctx = useContext(CartContext)
 
   useEffect(() => {
     if (window.Stripe) setStripe(window.Stripe(stripeToken))
@@ -38,7 +19,7 @@ export default function Cart({ stripeToken }) {
 
   function checkout() {
     stripe.redirectToCheckout({
-      items: items.map(item => ({
+      products: ctx.items.map(item => ({
         quantity: item.quantity,
         sku: item.sku
       })),
@@ -60,7 +41,7 @@ export default function Cart({ stripeToken }) {
         </thead>
 
         <tbody>
-          {items.map(item => (
+          {ctx.items.map(item => (
             <tr>
               <td>{item.name}</td>
               <td>
@@ -78,7 +59,7 @@ export default function Cart({ stripeToken }) {
             <td style={{ textAlign: "right" }} colspan={3}>
               Total:
             </td>
-            <td>{formatPrice(totalPrice(items))}</td>
+            <td>{formatPrice(totalPrice(ctx.items))}</td>
           </tr>
 
           <tr>
