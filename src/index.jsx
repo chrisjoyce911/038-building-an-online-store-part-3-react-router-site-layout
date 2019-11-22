@@ -6,6 +6,8 @@ import CartProvider from "./components/cart/context";
 import ProductsPage from "./pages/products";
 import ViewCartPage from "./pages/view-cart";
 
+import "./styles.css";
+
 ReactDOM.render(
   <BrowserRouter>
     <CartProvider>
