@@ -1,21 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React from "react"
+import ReactDOM from "react-dom"
 
-import CartProvider from "./components/cart/context";
-import ProductsPage from "./pages/products";
-import ViewCartPage from "./pages/view-cart";
-
-import "./styles.css";
+import Cart from "./components/cart"
 
 ReactDOM.render(
-  <BrowserRouter>
-    <CartProvider>
-      <Switch>
-        <Route exact path="/" component={ProductsPage} />
-        <Route exact path="/view-cart" component={ViewCartPage} />
-      </Switch>
-    </CartProvider>
-  </BrowserRouter>,
+  <Cart stripeToken="pk_test_yNFG8EE1RMXpBQmCyWRlGDx400CddyVwyS" />,
   document.getElementById("root")
-);
+)
