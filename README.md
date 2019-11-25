@@ -17,4 +17,4 @@ This is part 3 of the series and will be continued!
 
 - Part 1 - Stripe Setup and Basic Check-out: [Code](https://github.com/ReactUniversity/033-building-an-online-store-using-react-hooks-stripe) | [Screencast](https://www.youtube.com/watch?v=y0Yq1lPoloo)
 - Part 2 - Product display page and add to Cart: [Code](https://github.com/ReactUniversity/035-building-an-online-store-part-2-creating-context-using-hooks) | [Screencast](https://www.youtube.com/watch?v=VruAamDCg2U)
-- Part 3 - Implementing React Router and a Site Layout: [Code](https://github.com/ReactUniversity/038-building-an-online-store-part-3-react-router-site-layout) | [Screencast](https://www.youtube.com/watch?v=)
+- Part 3 - Implementing React Router and a Site Layout: [Code](https://github.com/ReactUniversity/038-building-an-online-store-part-3-react-router-site-layout) | [Screencast](https://www.youtube.com/watch?v=ypGdtivgJJE)
